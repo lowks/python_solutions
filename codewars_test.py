@@ -23,3 +23,7 @@ def sample_tests():
     @test.it("Should return 5 for \"abracadabra\"")
     def test_abracadabra():    
         test.assert_equals(get_count("abracadabra"), 5, f"Incorrect answer for \"abracadabra\"")
+
+    test.assert_equals(sortme(["Hello", "there", "I'm", "fine"]), ["fine", "Hello", "I'm", "there"])
+    test.assert_equals(sortme(["C", "d", "a", "B"]), ["a", "B", "C", "d"])
+    test.assert_equals(sortme(["CodeWars"]), ["CodeWars"])
