@@ -27,3 +27,15 @@ def balance(left, right):
         return "Left"
     else:
         return "Balance"
+
+class Converter():
+    @staticmethod
+    def to_ascii(h):
+        #your code here
+        output = [h[i:i+2] for i in range(0, len(h), 2)]
+        return ''.join([bytes.fromhex(x).decode("ascii") for x in output])
+    
+    @staticmethod
+    def to_hex(s):
+        #your code here
+        return ''.join([x.lstrip("0x") for x in list(map(hex, list(map(ord, s))))])
