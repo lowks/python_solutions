@@ -31,11 +31,31 @@ def balance(left, right):
 class Converter():
     @staticmethod
     def to_ascii(h):
-        #your code here
         output = [h[i:i+2] for i in range(0, len(h), 2)]
         return ''.join([bytes.fromhex(x).decode("ascii") for x in output])
     
     @staticmethod
     def to_hex(s):
-        #your code here
         return ''.join([x.lstrip("0x") for x in list(map(hex, list(map(ord, s))))])
+
+        
+        
+# class Converter_Better():
+#     @staticmethod
+#     def to_ascii(h):
+#         return h.decode("hex")
+#     @staticmethod
+#     def to_hex(s):
+#         return s.encode("hex")
+
+def highest_rank(arr):
+    output = [(x, arr.count(x)) for x in arr]
+    return max([x[0] for x in set(output) if x[1] == max(output, key=lambda x:x[1])[1]])
+
+import re
+
+def solve(s):
+    return max(map(sum_string, re.split('[aeiou]', s)))
+
+def sum_string(string):
+    return sum([ord(x) - 96 for x in string])
