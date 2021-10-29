@@ -59,3 +59,8 @@ def solve(s):
 
 def sum_string(string):
     return sum([ord(x) - 96 for x in string])
+
+from collections import Counter
+
+def group(arr):
+    return [[i] * j for i, j in Counter(arr).items()]
