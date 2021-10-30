@@ -64,3 +64,24 @@ from collections import Counter
 
 def group(arr):
     return [[i] * j for i, j in Counter(arr).items()]
+
+# len(a) will give you the number of top-level elements in the list/array named a.
+
+# Your task is to create a function deepCount that returns the number of ALL elements within an array, including any within inner-level arrays.
+
+# For example:
+
+# deepCount([1, 2, 3]);  
+# //>>>>> 3
+# deepCount(["x", "y", ["z"]]);  
+# //>>>>> 4
+# deepCount([1, 2, [3, 4, [5]]]);  
+# //>>>>> 7
+
+def deep_count(listOfElem):
+    count = 0
+    for elem in listOfElem:
+        count += 1
+        if type(elem) == list:
+            count += deep_count(elem) 
+    return count
