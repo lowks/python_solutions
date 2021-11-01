@@ -27,3 +27,10 @@ def sample_tests():
     test.assert_equals(sortme(["Hello", "there", "I'm", "fine"]), ["fine", "Hello", "I'm", "there"])
     test.assert_equals(sortme(["C", "d", "a", "B"]), ["a", "B", "C", "d"])
     test.assert_equals(sortme(["CodeWars"]), ["CodeWars"])
+
+    test.describe("Basic tests")
+    test.assert_equals(group([3, 2, 6, 2, 1, 3]), [[3, 3], [2, 2], [6], [1]])
+    test.assert_equals(group([3, 2, 6, 2]), [[3], [2, 2], [6]])
+    test.assert_equals(group([]), [])
+    test.assert_equals(group([1, 100, 4, 2, 4]), [[1], [100], [4, 4], [2]])
+    test.assert_equals(group([-1, 1, -1]), [[-1, -1], [1]])
